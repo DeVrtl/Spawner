@@ -9,30 +9,30 @@ public class EnemySpawner : MonoBehaviour
 
     
     private int _randomPosition;
-    private float _timeBetweenSpawnsNewEnemyTemplate;
+    private float _timeBetweenSpawnsEnemy;
     private float _startTimeBetweenSpawns = 2f;
 
     private void Start()
     {
-        _timeBetweenSpawnsNewEnemyTemplate = _startTimeBetweenSpawns;
+        _timeBetweenSpawnsEnemy = _startTimeBetweenSpawns;
     }
 
     private void Update()
     {
-        int random;
+        int randomTemplate;
 
-        if (_timeBetweenSpawnsNewEnemyTemplate <= 0)
+        if (_timeBetweenSpawnsEnemy <= 0)
         {
-            random = Random.Range(0, _enemyTemplates.Length);
+            randomTemplate = Random.Range(0, _enemyTemplates.Length);
             _randomPosition = Random.Range(0, _spawnPoints.Length);
 
-            Instantiate(_enemyTemplates[random], _spawnPoints[_randomPosition].transform.position, Quaternion.identity);
+            Instantiate(_enemyTemplates[randomTemplate], _spawnPoints[_randomPosition].transform.position, Quaternion.identity);
 
-            _timeBetweenSpawnsNewEnemyTemplate = _startTimeBetweenSpawns;
+            _timeBetweenSpawnsEnemy = _startTimeBetweenSpawns;
         }
         else
         {
-            _timeBetweenSpawnsNewEnemyTemplate -= Time.deltaTime;
+            _timeBetweenSpawnsEnemy -= Time.deltaTime;
         }
     }
 }

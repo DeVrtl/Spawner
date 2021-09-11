@@ -4,35 +4,22 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _enemyTemplates;
+    [SerializeField] private GameObject _enemyPrefab;
     [SerializeField] private Transform[] _spawnPoints;
 
-    
-    private int _randomPosition;
-    private float _timeBetweenSpawnsEnemy;
-    private float _startTimeBetweenSpawns = 2f;
-
-    private void Start()
-    {
-        _timeBetweenSpawnsEnemy = _startTimeBetweenSpawns;
-    }
+    private float _twoSecondsBetweenSpawn = 2;
+    private float _elapsedTime = 0;
 
     private void Update()
     {
-        int randomTemplate;
+        _elapsedTime += Time.deltaTime;
 
-        if (_timeBetweenSpawnsEnemy <= 0)
+        if (_elapsedTime >= _twoSecondsBetweenSpawn)
         {
-            randomTemplate = Random.Range(0, _enemyTemplates.Length);
-            _randomPosition = Random.Range(0, _spawnPoints.Length);
+            _elapsedTime = 0;
 
-            Instantiate(_enemyTemplates[randomTemplate], _spawnPoints[_randomPosition].transform.position, Quaternion.identity);
-
-            _timeBetweenSpawnsEnemy = _startTimeBetweenSpawns;
-        }
-        else
-        {
-            _timeBetweenSpawnsEnemy -= Time.deltaTime;
+            int spawnPointNumber = Random.Range(0, _spawnPoints.Length);
+            Instantiate(_enemyPrefab, _spawnPoints[spawnPointNumber]);
         }
     }
 }

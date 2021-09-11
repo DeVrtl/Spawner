@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 329783289}
   m_Layer: 0
-  m_Name: Spawner (2)
+  m_Name: Point (2)
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -161,7 +161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 418564917}
   m_Layer: 0
-  m_Name: Spawner (1)
+  m_Name: Point (1)
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 698793867}
   - component: {fileID: 698793868}
   m_Layer: 0
-  m_Name: Spawners
+  m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -228,14 +228,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c885000037ee3794b8eadca663846ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemy:
-  - {fileID: 6414952029793011871, guid: 778d18fe91e941e4db30173a99341be9, type: 3}
-  _spawners:
+  _enemyPrefab: {fileID: 6414952029793011871, guid: 778d18fe91e941e4db30173a99341be9,
+    type: 3}
+  _spawnPoints:
   - {fileID: 1549973552}
   - {fileID: 418564917}
   - {fileID: 329783289}
   - {fileID: 2090684804}
-  _startTimeBetweenSpawns: 2
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1549973552}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: Point
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -451,7 +450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2090684804}
   m_Layer: 0
-  m_Name: Spawner (3)
+  m_Name: Point (3)
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
